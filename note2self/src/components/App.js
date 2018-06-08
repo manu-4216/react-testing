@@ -15,19 +15,25 @@ class App extends Component {
         };
 
         this.submit = this.submit.bind(this);
+        this.clear = this.clear.bind(this);
     }
 
     componentDidMount() {
         this.setState({ notes: read_cookie(cookie_key) });
     }
 
-    submit(event) {
+    submit() {
         const { notes, text } = this.state;
 
         notes.push({ text });
         this.setState({ notes, text: '' });
 
         bake_cookie(cookie_key, notes);
+    }
+
+    clear() {
+        this.setState({ notes: [] });
+        delete_cookie(cookie_key);
     }
 
     render() {
@@ -45,6 +51,7 @@ class App extends Component {
                     {this.state.notes.map(note => (
                         <Note key={note.text} note={note} />
                     ))}
+                    <Button onClick={this.clear}>Clear Notes</Button>
                 </Form>
             </div>
         );

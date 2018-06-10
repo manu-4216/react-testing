@@ -6,6 +6,7 @@ class App extends Component {
         return (
             <div>
                 <h2>Flashcard Pro</h2>
+                <hr />
                 <Stacklist />
             </div>
         );

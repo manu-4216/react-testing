@@ -7,10 +7,11 @@ import rootReducer from './reducers';
 import App from './components/App';
 import Stack from './components/Stack';
 import { setStack } from './actions';
+import './index.css';
 
 const store = createStore(rootReducer);
 store.subscribe(() => console.log('store', store.getState()));
-store.dispatch(setStack({ id: 0, title: 'example', cards: [] }));
+//store.dispatch(setStack({ id: 0, title: 'example', cards: [] }));
 
 ReactDOM.render(
     <Provider store={store}>

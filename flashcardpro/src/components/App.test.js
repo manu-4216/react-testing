@@ -9,4 +9,14 @@ describe('App', () => {
         const appTitle = 'Flashcard Pro';
         expect(app.find('h2').text()).toEqual(appTitle);
     });
+
+    it('renders the stacklist', () => {
+        expect(app.find('Connect(Stacklist)').exists()).toBe(true);
+    });
+
+    it('renders a link to create new stacks', () => {
+        const createStackText = 'Create a New Stack';
+        //console.log(app.debug());
+        expect(app.find('Link h4').text()).toEqual(createStackText);
+    });
 });

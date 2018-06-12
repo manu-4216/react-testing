@@ -21,7 +21,7 @@ class Stack extends Component {
 }
 
 const mapStateToProps = state => ({
-    stack: state
+    stack: state.stack
 });
 
 export default connect(

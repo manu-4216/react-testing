@@ -4,7 +4,7 @@ import stacks from '../data/stacks.json';
 import Link from 'react-router-dom/Link';
 import { setStack, loadStacks } from '../actions';
 
-class Stacklist extends Component {
+export class StackList extends Component {
     componentDidMount() {
         if (this.props.stacks.length === 0) {
             this.props.loadStacks(stacks);
@@ -35,4 +35,4 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     { setStack, loadStacks }
-)(Stacklist);
+)(StackList);

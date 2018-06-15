@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { StackList } from './StackList';
+import { MemoryRouter } from 'react-router-dom';
 import { stacks } from '../data/fixtures';
 
 describe('StackList', () => {
@@ -13,6 +14,31 @@ describe('StackList', () => {
 
             it('renders the existent stacks', () => {
                 expect(stackList.find('Link').length).toBe(stacks.length);
+            });
+
+            describe('and clicks on an item', () => {
+                //const mockSetStack = jest.fn();
+                const props = {
+                    stacks,
+                    setStack: jest.fn()
+                };
+
+                // MemoryRouter is needed to provide context to Link
+                // see: https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/guides/testing.md
+                let stackList = mount(
+                    <MemoryRouter>
+                        <StackList {...props} />
+                    </MemoryRouter>
+                );
+
+                stackList
+                    .find('Link')
+                    .at(1)
+                    .simulate('click');
+
+                it('calls setStack on clicked item', () => {
+                    expect(props.setStack).toHaveBeenCalled();
+                });
             });
         });
 

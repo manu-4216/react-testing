@@ -8,7 +8,7 @@ export const stack = {
 };
 
 const stack2 = {
-    id: 0,
+    id: 1,
     title: 'another stack title',
     cards: [
         { id: 0, prompt: '2- test prompt', answer: '2- test answer' },

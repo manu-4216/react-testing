@@ -17,7 +17,6 @@ describe('StackList', () => {
             });
 
             describe('and clicks on an item', () => {
-                //const mockSetStack = jest.fn();
                 const props = {
                     stacks,
                     setStack: jest.fn()
@@ -33,7 +32,7 @@ describe('StackList', () => {
 
                 stackList
                     .find('Link')
-                    .at(1)
+                    .first()
                     .simulate('click');
 
                 it('calls setStack on clicked item', () => {

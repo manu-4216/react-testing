@@ -17,3 +17,5 @@ const stack2 = {
 };
 
 export const stacks = [stack, stack2];
+
+export const card = stack.cards[0];

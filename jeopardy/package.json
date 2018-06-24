@@ -23,5 +23,12 @@
     "jest-cli": "^20.0.4",
     "react-test-renderer": "^16.4.1",
     "sinon": "^6.0.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js",
+      "!src/tempPolyfills.js"
+    ]
   }
 }

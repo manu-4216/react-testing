@@ -3,6 +3,8 @@ export const categories = [
     { id: 1, title: 'category two' }
 ];
 
+export const category = categories[0];
+
 export const clue = {
     id: 0,
     question: 'q one',

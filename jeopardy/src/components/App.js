@@ -13,8 +13,6 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.props.categories);
-
         return (
             <div>
                 <h2>Jeopardy!</h2>
